@@ -10,8 +10,8 @@
 <?php
 print("<pre>");
 
-$ugis= $_POST["fname"];
-$svoris= $_POST["lname"];
+$ugis= $_POST["ugis"];
+$svoris= $_POST["svoris"];
 
 If($svoris/(($ugis*$ugis)/10000)<18.5)
     print('nepakankamas svoris');
@@ -22,25 +22,15 @@ If($svoris/(($ugis*$ugis)/10000)<18.5)
     else if($svoris/(($ugis*$ugis)/10000)>30)
     print('Nutukimas');
 
-// print($_POST["fname"].  "-" . $_POST["lname"]);
-
-
-
-// if(isset ($_POST['fname']))
-//             print('<h3 style="color: red">Please enter your first name!</h3>');
-
-
-            
-
 print("</pre>");
 
 ?>
 
 <form action="./" method="POST">  
 <label for="fname">Jūsų ūgis (cm):</label><br>
-<input type="text" id="fname" name="fname" value=""><br>
+<input type="text" id="fname" name="ugis" value=""><br>
 <label for="lname">Jūsų svoris (kg):</label><br>
-<input type="text" id="lname" name="lname" value=""><br>
+<input type="text" id="lname" name="svoris" value=""><br>
 <input type="submit" value="Skaičiuoti">
 </form>
 
