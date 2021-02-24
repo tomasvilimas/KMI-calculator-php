@@ -33,13 +33,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 If($svoris/(($ugis*$ugis)/10000)<18.5)
-    print('<h3 style="color: red">Nepakankamas svoris</h3>' );
+    print('<h3 style="color: grey">Nepakankamas svoris</h3>' );
     else if($svoris/(($ugis*$ugis)/10000)<25)
-    print('<h3 style="color: red">Normalus svoris</h3>');
+    print('<h3 style="color: grey">Normalus svoris</h3>');
     else if($svoris/(($ugis*$ugis)/10000)<30)
-    print('<h3 style="color: red">Antsvoris</h3>');
+    print('<h3 style="color: grey">Antsvoris</h3>');
     else if($svoris/(($ugis*$ugis)/10000)>30)
-    print('<h3 style="color: red">Nutukimas</h3>');
+    print('<h3 style="color: grey">Nutukimas</h3>');
 
 }
 
