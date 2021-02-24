@@ -6,12 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="stilius.css">
+    <link rel="stylesheet" href="reset.css">
 </head>
 <body>
 
+<div class="background"></div>
+<main>
+<center>
 <?php
 print("<pre>");
+
+error_reporting(0);
 
 $ugis= $_POST["ugis"];
 $svoris= $_POST["svoris"];
@@ -27,28 +33,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
 
 If($svoris/(($ugis*$ugis)/10000)<18.5)
-    print('nepakankamas svoris' );
+    print('<h3 style="color: red">Nepakankamas svoris</h3>' );
     else if($svoris/(($ugis*$ugis)/10000)<25)
-    print('normalus svoris');
+    print('<h3 style="color: red">Normalus svoris</h3>');
     else if($svoris/(($ugis*$ugis)/10000)<30)
-    print('Antsvoris');
+    print('<h3 style="color: red">Antsvoris</h3>');
     else if($svoris/(($ugis*$ugis)/10000)>30)
-    print('Nutukimas');
+    print('<h3 style="color: red">Nutukimas</h3>');
 
 }
 
 print("</pre>");
 
 ?>
+</center>
 
-<form  class="label" action="./" method="POST">  
-<label  for="fname">Jūsų ūgis (cm):</label><br>
-<input  type="text" id="<?php echo 'ugis'; ?>" name="ugis" value="<?php if(isset($_POST['ugis'])) print($_POST['ugis']) ?>"><br>
-<label for="lname">Jūsų svoris (kg):</label><br>
-<input type="text" id="<?php echo 'svoris'; ?>" name="svoris" value="<?php if(isset($_POST['svoris'])) print($_POST['svoris']) ?>"><br>
-<input type="submit" value="Skaičiuoti">
+<form   action="./" method="POST">  
+<label class="label"  for="fname">Jūsų ūgis (cm):</label><br>
+<input class="label"  type="number" id="<?php echo 'ugis'; ?>" name="ugis" value="<?php if(isset($_POST['ugis'])) print($_POST['ugis']) ?>"><br>
+<label class="label" for="lname">Jūsų svoris (kg):</label><br>
+<input  class="label" type="number" id="<?php echo 'svoris'; ?>" name="svoris" value="<?php if(isset($_POST['svoris'])) print($_POST['svoris']) ?>"><br>
+<input class="label" type="submit" value="Skaičiuoti">
 </form>
-
+</main>
 
 
 </body>
